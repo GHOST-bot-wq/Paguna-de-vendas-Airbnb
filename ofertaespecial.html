@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Oferta Especial de Última Chance - Dinheiro Invisível com Airbnb">
+    <meta name="robots" content="noindex">
+    <title>Oferta Especial - 50% OFF - Dinheiro Invisível com Airbnb</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Global Background -->
+    <div class="global-bg-wrapper">
+        <div class="global-gradient"></div>
+        <div class="global-noise"></div>
+        <div class="global-shapes">
+            <div class="g-shape g-shape-1"></div>
+            <div class="g-shape g-shape-2"></div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="hero" style="min-height: auto; padding-bottom: 10px;">
+        <div class="container relative z-10">
+            <div class="hero-content fade-in-up">
+                <h1 style="margin-bottom: 12px;">🎁 Oferta Especial de <span class="highlight">Última Chance – 50%
+                        OFF</span></h1>
+                <p class="subheadline" style="margin-bottom: 15px;">Você quase saiu… então liberamos algo exclusivo para
+                    você. O mesmo produto pela
+                    metade do preço da oferta original.</p>
+
+                <div class="urgency-badge"
+                    style="background: #fff0f3; color: #ff0044; border-color: #ff0044; margin-top: 10px;">
+                    ⏳ Oferta expira em: <span id="countdown-timer">15:00</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-bg-overlay"></div>
+    </header>
+
+    <!-- Content & Offer Section -->
+    <section class="offers-section" style="padding-top: 0;">
+        <div class="container relative z-10">
+
+            <div class="text-center fade-in-up"
+                style="max-width: 700px; margin: 10px auto 30px; background: rgba(255,255,255,0.8); padding: 30px; border-radius: 20px; backdrop-filter: blur(10px);">
+                <p style="font-size: 1.1rem; color: #333; margin-bottom: 15px;">
+                    Sim, é isso mesmo. Você sabe quanto custa o valor original. Agora você pode garantir por <strong>50%
+                        do preço</strong> – oferta única, exclusiva e que não estará disponível novamente.
+                </p>
+                <p style="font-size: 1.1rem; color: #333;">
+                    Se você recusar aqui, o preço volta ao normal.
+                </p>
+            </div>
+
+            <div class="offers-grid" style="justify-content: center;">
+
+                <!-- Special Offer Card -->
+                <div id="complete-offer" class="offer-card complete fade-in-up featured"
+                    style="border-color: #ff0044; max-width: 500px;">
+                    <div class="best-choice-badge" style="background: linear-gradient(90deg, #ff0044, #cc0000);">🎁 50%
+                        DE DESCONTO</div>
+                    <h3>Dinheiro Invisível com Airbnb — <span class="highlight-text">Oferta VIP</span></h3>
+
+                    <ul class="benefits-list">
+                        <li>✅ <strong>Acesso imediato</strong></li>
+                        <li>✅ Mesmos bônus</li>
+                        <li>✅ Mesma entrega</li>
+                        <li>✅ Tudo igual à oferta original</li>
+                        <li>✅ <strong>A única diferença é o preço</strong></li>
+                    </ul>
+
+                    <div class="price-discount">
+                        <span class="old-price">Metade de...</span>
+                        <span class="discount-badge"
+                            style="background: #ffe6eb; color: #ff0044; border-color: #ff0044;">50% OFF</span>
+                    </div>
+
+                    <div class="price-box">
+                        <span class="currency">R$</span>
+                        <span class="amount">18</span><span class="cents">,95</span>
+                        <span class="payment-type">(pagamento único)</span>
+                    </div>
+
+                    <a href="#" class="btn btn-primary btn-large pulsating">🔒 Garantir Agora por 50% do Preço</a>
+                    <p class="final-call"
+                        style="text-align: center; margin-top: 15px; font-size: 0.85rem; color: #666;">Oferta válida
+                        apenas nesta página.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee Section Condensed -->
+    <section class="guarantee-section" style="padding: 60px 0;">
+        <div class="container relative z-10">
+            <div class="guarantee-box fade-in-up" style="padding: 30px;">
+                <div class="guarantee-icon">
+                    <div class="guarantee-seal" style="width: 100px; height: 100px; border-width: 4px;">
+                        <span class="seal-days" style="font-size: 2.5rem;">15</span>
+                        <span class="seal-text" style="font-size: 0.8rem;">DIAS</span>
+                    </div>
+                </div>
+                <div class="guarantee-content">
+                    <h2 style="font-size: 1.5rem;">Garantia Total Mantida</h2>
+                    <p>Mesmo com o desconto, sua garantia de 15 dias continua valendo. O risco é todo meu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Footer -->
+    <footer class="final-cta" style="background: #ffffff; border-top: 1px solid #eee;">
+        <div class="container relative z-10">
+            <p class="copyright" style="color: #666;">© 2026 Dinheiro Invisível com Airbnb. Todos os direitos
+                reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Fake Timer Logic specific for this page
+        function startTimer(duration, display) {
+            var timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    timer = 0;
+                    display.textContent = "00:00"; // Optional: redirect or show 'Expired'
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            var fifteenMinutes = 60 * 15,
+                display = document.querySelector('#countdown-timer');
+            if (display) {
+                startTimer(fifteenMinutes, display);
+            }
+        };
+    </script>
+</body>
+
+</html>

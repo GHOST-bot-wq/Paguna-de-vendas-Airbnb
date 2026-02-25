@@ -1,5 +1,6 @@
 /* CSS Variables & Reset */
 :root {
+    color-scheme: light;
     --primary-color: #FF385C;
     /* Airbnb Red */
     --primary-hover: #E31C5F;

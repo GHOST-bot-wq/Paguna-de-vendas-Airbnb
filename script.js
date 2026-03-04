@@ -49,13 +49,23 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            const targetId = this.getAttribute('href');
-            if (targetId && targetId !== '#') {
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth'
-                    });
+            let targetId = this.getAttribute('href');
+
+            // Tratamento caso algum script de UTM adicione parâmetros ao href
+            if (targetId && targetId.includes('?')) {
+                targetId = targetId.split('?')[0];
+            }
+
+            if (targetId && targetId.startsWith('#') && targetId !== '#') {
+                try {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                } catch (error) {
+                    console.error("Erro ao buscar elemento para scroll:", error);
                 }
             }
         });
@@ -86,12 +96,15 @@ document.addEventListener('DOMContentLoaded', () => {
 // ------------------------------------------
 // Verifica se NÃO estamos na página ofertaespecial.html para evitar loops
 if (!window.location.pathname.includes("ofertaespecial")) {
-    // Empurra um estado no histórico para "prender" o usuário
-    history.pushState(null, null, location.href);
+    // Implementação robusta (Double-PushState) para não conflitar com links internos
+    history.pushState({ backRedirect: 1 }, null, location.href);
+    history.pushState({ backRedirect: 2 }, null, location.href);
 
     // Ouve o evento de "Voltar" do navegador
-    window.addEventListener("popstate", function () {
-        // Redireciona para a oferta especial
-        window.location.href = "ofertaespecial.html" + window.location.search;
+    window.addEventListener("popstate", function (event) {
+        // Apenas redireciona se o estado corresponder ao primeiro pushState
+        if (event.state && event.state.backRedirect === 1) {
+            window.location.href = "ofertaespecial.html" + window.location.search;
+        }
     });
 }

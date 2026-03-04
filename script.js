@@ -92,6 +92,6 @@ if (!window.location.pathname.includes("ofertaespecial")) {
     // Ouve o evento de "Voltar" do navegador
     window.addEventListener("popstate", function () {
         // Redireciona para a oferta especial
-        window.location.href = "ofertaespecial.html";
+        window.location.href = "ofertaespecial.html" + window.location.search;
     });
 }
